@@ -6,37 +6,26 @@ client.on('ready', () => {
 });
 
 
-var prefix = "3";
 
-  client.on('message', async message => {
-  if(message.content.startsWith(prefix + "اقتراح")) {
-  await  message.channel.send(`اكتب اقتراحك الان`)
-    let filter = m => m.author.id === message.author.id
-      var text = '';
-        let sugsa = message.channel.awaitMessages(filter, { max: 1, time: 60000})
-          .then(co => {
-            text = co.first().content
-
-              message.channel.send(`تم حفظ اقتراحك الرجاء انتضار الرد من قبل الاداره`)
-                client.channels.get("469577187281076234").send(`${message.author.username}'s sug => ${text}`)
-
-              })
-            }
-          })
-  
-
-  let channel = ["469575636432846870"];
 client.on('voiceStateUpdate', (Codes, ReBeL) => {
-client.channels.get(channel);
-    ReBeL.guild.member(ReBeL).addRole(ReBeL.guild.roles.find("name", "ولد"))
-                  ReBeL.guild.createChannel('ReBeL', 'voice').then(c => {
-                ReBeL.setVoiceChannel(c).then(() => {
-                    c.delete(305).catch(console.log);
-  console.log("Done");
+    let channel3 = ["ايدي الروم"];
+client.channels.get(channel3)
+ReBeL.guild.member(ReBeL).addRole(ReBeL.guild.roles.find("name", "بنت")).then(r => {
+      });
+console.log("Done");
+});
+  client.on('voiceStateUpdate', (codes, ReBeL) => {
+if(ReBeL.voiceChannelID !== "469575710558650388") return console.log("أيرور . ");
+ReBeL.guild.createChannel(ReBeL.user.username , 'voice').then((rebeeel) =>{
+ReBeL.guild.members.get(ReBeL.id).setVoiceChannel(rebeeel.id).then((codess) =>{
+  console.log("تــــــم .");
+  let scan = setInterval(()=>{
+  rebeeel.delete();
+  }, 305);
 });
 });
 });
 
 
-  
-   client.login('NDY5NjU5NzU4NDAwMzcyNzM2.DjK9IQ.4AvTn_4OIIIQaKeD6RCF_5FMbsM');
+
+client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا 
